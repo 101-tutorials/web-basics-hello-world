@@ -39,6 +39,9 @@ We need to use the command line to run the python server. [Mac users can use Ter
 
 In your terminal/command line app navigate to the folder where index.html is located in your cloned repo (If you don't know what to do [Windows users can look here](http://www.digitalcitizen.life/command-prompt-how-use-basic-commands), [Linux and Mac users can look here](http://linuxcommand.org/lc3_lts0020.php)). Then run the command `python -m SimpleHTTPServer 8000` / `python -m http.server 8000`. When that is running you can point your browser to http://localhost:8000 to see the page running.
 
+### In case you can't get Python working on your machine
+You can instead install Docker by folling the instructions [here](https://docs.docker.com/get-docker/). In your terminal/command line app navigate to the folder where index.html is located in your cloned repo (If you don't know what to do [Windows users can look here](http://www.digitalcitizen.life/command-prompt-how-use-basic-commands), [Linux and Mac users can look here](http://linuxcommand.org/lc3_lts0020.php)). Then run the command `docker-compose up`. When that is running you can point your browser to http://localhost:8000 to see the page running.
+
 After you have loaded the page in the browser go back and look at the python server's output in the terminal. You should see a bunch of GET requests for certain files (and maybe you'll see a cheeky 404 error when the browser tries to fetch the non-existant favicon.ico).
 
 _Note: SimpleHTTPServer will default to serving the index.html file at the root url_

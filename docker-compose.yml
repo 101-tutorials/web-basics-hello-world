@@ -1,0 +1,9 @@
+version: '2.0'
+services:
+  app:
+    build: .
+    ports:
+    - "8000:8000"
+    volumes:
+    - .:/app
+    restart: always
