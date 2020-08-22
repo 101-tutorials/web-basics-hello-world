@@ -1,4 +1,4 @@
-# web-basics-hello-world
+# The great animal trivia - Prae's edition
 A simple web page to show off the basics for getting started with web development (html, css, js...).
 
 Project is based on [web-basics-hello-world](https://github.com/101-tutorials/web-basics-hello-world), to practice fetching and using a random open api.
