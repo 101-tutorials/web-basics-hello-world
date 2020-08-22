@@ -1,7 +1,9 @@
 :root {
   --body-font: 1rem;
+  --button-font: 1rem;
   
   --heading-1: 3rem;
+  --heading-1-em: 4rem;
   --heading-line-height: 1.2;
 
   --primary-font: 'Open Sans', sans-serif;
@@ -11,9 +13,10 @@
   --main-bg-color: rgb(39, 35, 59);
   --primary-color: rgb(148, 98, 44);
   --secondary-color: rgb(87, 99, 85);
+  --highlight-color: rgb(138, 82, 22);
   
   font-family: var(--primary-font);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--text-color);
 }
@@ -21,7 +24,29 @@
 @media (min-width: 520px) {
   :root {
     --heading-1: 4rem;
+    --heading-1-em: 7rem;
+    --button-font: 1.2rem;
   }
+}
+
+@-webkit-keyframes em-colours {
+  0%   { color: var(--text-color); }
+  100% { color: var(--highlight-color); }
+}
+
+@-moz-keyframes em-colours {
+  0%   { color: var(--text-color); }
+  100% { color: var(--highlight-color); }
+}
+
+@-o-keyframes em-colours {
+  0%   { color: var(--text-color); }
+  100% { color: var(--highlight-color); }
+}
+
+@keyframes em-colours {
+  0%   { color: var(--text-color); }
+  100% { color: var(--highlight-color); }
 }
 
 html,
@@ -52,17 +77,27 @@ body {
   margin-top: 0;
 }
 
+.heading-1 em {
+  font-size: var(--heading-1-em);
+  font-style: normal;
+  color: rgb(138, 82, 22);
+  -webkit-animation: em-colours 1.5s infinite; /* Safari 4+ */
+  -moz-animation:    em-colours 1.5s infinite; /* Fx 5+ */
+  -o-animation:      em-colours 1.5s infinite; /* Opera 12+ */
+  animation:         em-colours 1.5s infinite;
+}
+
 .button {
   border: none;
   background-color: var(--primary-color);
-  border-radius: 3rem;
-  padding: 1.5rem 2rem;
+  border-radius: 2rem;
+  padding: 1.3rem 1.6rem;
   color: var(--text-color);
   cursor: pointer;
   margin: 0 auto;
   display: block;
   font-family: var(--primary-font);
-  font-size: 1.5rem;
+  font-size: var(--button-font);
 }
 
 button:hover {
