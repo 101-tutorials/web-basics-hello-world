@@ -16,26 +16,29 @@ document.onreadystatechange = () => {
     }
     
     function displayQuestionAndAnswer(question, answer) {
-      document.querySelector("#js-resultsArea").innerHTML = "<p>True or false?</p>";
+      resultsArea.innerHTML = "<p>True or false?</p>";
       document.querySelector("#js-questionDisplay").innerHTML = `<p> ${question}</p>`;
       document.querySelector("#js-answerDisplay").innerHTML = `<p>Answer: ${answer}</p>`;
       generateTriviaButton.textContent = "Show me another one";
     }
     
+    // https://javascript.info/xmlhttprequest
     // Gets a random animal trivia question from an API, then pass the result to the callback function
     function fetchRandomTriviaQuestion(callback) {
-      resultsArea.innerHTML = "<p>Loading trivia...</p>";
       // This API gets random trvia questions
       // The url includes parameters to configure the API to only return
       // true or false trivia on animals encoded in base64
-    
+      
+      // 1. Create a new XMLHttpRequest object
       // Configure your own api call at https://opentdb.com/api_config.php
       let request = new XMLHttpRequest();
-      request.open('GET', 'https://opentdb.com/api.php?amount=1&category=27&type=boolean&encode=base64', true);
-    
+      request.open('GET', 'https://opentdb.com/api.php?amount=1&category=27&type=boolean&encode=base64');
+      
+      request.send();
+
       request.onload = (data) => {
         // Success!
-        console.table(data);
+        console.log(data);
   
         let results = data.results;
   
@@ -46,13 +49,15 @@ document.onreadystatechange = () => {
         // call the function we passed into fetchRandomTriviaQuestion
         callback(question, answer);
       };
-    
-      request.onerror = function() {
-        // There was a connection error of some sort
-        console.log("API request error");
+
+      request.onprogress = () => {
+        resultsArea.innerHTML = "<p>Loading trivia...</p>";
       };
     
-      request.send();
+      request.onerror = () => {
+        // There was a connection error of some sort
+        console.log("Request failed");
+      };
     }
   }
 };
