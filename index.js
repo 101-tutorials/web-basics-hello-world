@@ -35,7 +35,7 @@ document.onreadystatechange = () => {
     
       request.onload = (data) => {
         // Success!
-        console.log('data: ', data);
+        console.table(data);
   
         let results = data.results;
   
