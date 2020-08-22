@@ -3,7 +3,7 @@
   --button-font: 1rem;
   
   --heading-1: 3rem;
-  --heading-1-em: 4rem;
+  --heading-1-em: 4.3rem;
   --heading-line-height: 1.2;
 
   --primary-font: 'Open Sans', sans-serif;
@@ -73,7 +73,6 @@ body {
   font-weight: normal;
   line-height: var(--heading-line-height);
   -webkit-font-smoothing: antialiased;
-  text-align: center;
   margin-top: 0;
 }
 
@@ -87,6 +86,17 @@ body {
   animation:         em-colours 1.5s infinite;
 }
 
+@media (max-width: 519px) {
+  .heading-1 em {
+    margin-top: -0.6rem;
+    display: inline-block;
+  }
+}
+
+.text-centered {
+  text-align: center;
+}
+
 .button {
   border: none;
   background-color: var(--primary-color);
@@ -98,6 +108,7 @@ body {
   display: block;
   font-family: var(--primary-font);
   font-size: var(--button-font);
+  margin-bottom: 2.3rem;
 }
 
 button:hover {
