@@ -29,26 +29,6 @@
   }
 }
 
-@-webkit-keyframes em-colours {
-  0%   { color: var(--text-color); }
-  100% { color: var(--highlight-color); }
-}
-
-@-moz-keyframes em-colours {
-  0%   { color: var(--text-color); }
-  100% { color: var(--highlight-color); }
-}
-
-@-o-keyframes em-colours {
-  0%   { color: var(--text-color); }
-  100% { color: var(--highlight-color); }
-}
-
-@keyframes em-colours {
-  0%   { color: var(--text-color); }
-  100% { color: var(--highlight-color); }
-}
-
 html,
 body {
   margin: 0;
@@ -74,6 +54,26 @@ body {
   line-height: var(--heading-line-height);
   -webkit-font-smoothing: antialiased;
   margin-top: 0;
+}
+
+@-webkit-keyframes em-colours {
+  0%   { color: var(--text-color); }
+  100% { color: var(--highlight-color); }
+}
+
+@-moz-keyframes em-colours {
+  0%   { color: var(--text-color); }
+  100% { color: var(--highlight-color); }
+}
+
+@-o-keyframes em-colours {
+  0%   { color: var(--text-color); }
+  100% { color: var(--highlight-color); }
+}
+
+@keyframes em-colours {
+  0%   { color: var(--text-color); }
+  100% { color: var(--highlight-color); }
 }
 
 .heading-1 em {
@@ -108,9 +108,49 @@ body {
   display: block;
   font-family: var(--primary-font);
   font-size: var(--button-font);
-  margin-bottom: 2.3rem;
+  margin-bottom: 3rem;
 }
 
 button:hover {
   background-color: var(--secondary-color);
+}
+
+.loading-visual {
+  display: inline-block;
+  max-width: 200px;
+}
+
+.is-hidden {
+  display: none;
+}
+
+@-webkit-keyframes hovering {
+  0%   { margin-top: 0; }
+  50% { margin-top: -5px; }
+  100% { margin-top: 0; }
+}
+
+@-moz-keyframes hovering {
+  0%   { margin-top: 0; }
+  50% { margin-top: -5px; }
+  100% { margin-top: 0; }
+}
+
+@-o-keyframes hovering {
+  0%   { margin-top: 0; }
+  50% { margin-top: -5px; }
+  100% { margin-top: 0; }
+}
+
+@keyframes hovering {
+  0%   { margin-top: 0; }
+  50% { margin-top: -5px; }
+  100% { margin-top: 0; }
+}
+
+.loading-animation {
+  -webkit-animation: hovering 1.3s infinite;
+  -moz-animation:    hovering 1.3s infinite;
+  -o-animation:      hovering 1.3s infinite;
+  animation:         hovering 1.3s infinite;
 }

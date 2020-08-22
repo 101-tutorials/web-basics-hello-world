@@ -4,6 +4,7 @@ document.onreadystatechange = () => {
     console.log("DOM loaded...");
     
     const generateTriviaButton = document.querySelector(`#js-button`);
+    const loadingVisual = document.querySelector("#js-loadingVisual");
     const resultsArea = document.querySelector("#js-resultsArea");
     
     generateTriviaButton.addEventListener('click', showAnimalTrivia);
@@ -37,6 +38,8 @@ document.onreadystatechange = () => {
       request.send();
 
       request.onload = (data) => {
+        // loadingVisual.classList.add('is-hidden');
+        // loadingVisual.classList.remove('oading-animation');
         // Success!
         console.log(data);
   
@@ -51,7 +54,8 @@ document.onreadystatechange = () => {
       };
 
       request.onprogress = () => {
-        resultsArea.innerHTML = "<p>Loading trivia...</p>";
+        loadingVisual.classList.add('loading-animation');
+        loadingVisual.classList.remove('is-hidden');
       };
     
       request.onerror = () => {
