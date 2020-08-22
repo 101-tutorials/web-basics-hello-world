@@ -8,9 +8,6 @@ Project is based on [web-basics-hello-world](https://github.com/101-tutorials/we
   - For python 3+ (More likely to work on Windows) : `python -m http.server 8000`
 
 ## Here are the things to fix up on the page
-* Make the heading say something useful by editing the h1 tag in index.html _(maybe something like 'hello world' yeah?)_
-* Make the purple text purple by filling in the definition for the 'purple' css class in index.css _(If you want to learn more [here is a good guide for getting started with css](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS). I recommend looking at the [tutorial for css selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors) as it comes in handy for interacting with the page via javascript)_
-* Make the button print "Oh hi!" into the results-area div by binding a javascript function to the click action on the button element _(hint: start with line 11 in index.js.)_
 * Do something cool with the fetchRandomTriviaQuestion and displayQuestionAndAnswer functions _(hint: maybe you can combine them and hook them up to the function that is called when the button is clicked?)_
 
 ## Bonus things to do if you're hungry for more
