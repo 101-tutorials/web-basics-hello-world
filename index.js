@@ -33,21 +33,32 @@ document.onreadystatechange = () => {
       // 1. Create a new XMLHttpRequest object
       // Configure your own api call at https://opentdb.com/api_config.php
       let request = new XMLHttpRequest();
-      request.open('GET', 'https://opentdb.com/api.php?amount=1&category=27&type=boolean&encode=base64');
+      let url = new URL('https://opentdb.com/api.php');
+          url.searchParams.set('amount', '1');
+          url.searchParams.set('category', '27');
+          url.searchParams.set('type', 'boolean');
+          url.searchParams.set('encode', 'base64');
+
+      // request.open('GET', 'https://opentdb.com/api.php?amount=1&category=27&type=boolean&encode=base64');
+      request.open('GET', url);
       
+      request.responseType = 'json';
+
       request.send();
 
+      //not getting right data
       request.onload = (data) => {
         // loadingVisual.classList.add('is-hidden');
         // loadingVisual.classList.remove('oading-animation');
         // Success!
+        console.log(request);
         console.log(data);
   
-        let results = data.results;
+        var result = data.results;
   
         // atob() is a built in method to decode base64 encoded strings
-        let question = atob(results[0].question);
-        let answer = atob(results[0].correct_answer);
+        let question = atob(result[0].question);
+        let answer = atob(result[0].correct_answer);
     
         // call the function we passed into fetchRandomTriviaQuestion
         callback(question, answer);
