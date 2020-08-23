@@ -20,8 +20,8 @@ document.onreadystatechange = () => {
       loadingVisual.classList.remove('loading-animation');
       loadingVisual.classList.add('is-hidden');
       resultsArea.innerHTML = "<p>True or false?</p>";
-      document.querySelector("#js-questionDisplay").innerHTML = `<p> ${question}</p>`;
-      document.querySelector("#js-answerDisplay").innerHTML = `<p>Answer: ${answer}</p>`;
+      document.querySelector("#js-questionDisplay").innerHTML = `<h2>${question}</h2>`;
+      document.querySelector("#js-answerDisplay").innerHTML = `<p>${answer}</p>`;
       generateTriviaButton.textContent = "Show me another trivia";
     }
 
