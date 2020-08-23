@@ -4,12 +4,14 @@
   
   --heading-1: 3rem;
   --heading-1-em: 4.3rem;
+  --heading-2: 1.3rem;
   --heading-line-height: 1.2;
 
   --primary-font: 'Open Sans', sans-serif;
   --display-font: 'Chewy', cursive;
   
   --text-color: rgb(234, 233, 242);
+  --text-color-muted: rgb(174, 133, 91);
   --main-bg-color: rgb(39, 35, 59);
   --primary-color: rgb(148, 98, 44);
   --secondary-color: rgb(87, 99, 85);
@@ -93,8 +95,18 @@ body {
   }
 }
 
+.heading-2 {
+  font-size: var(--heading-2);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .text-centered {
   text-align: center;
+}
+
+.colour-muted {
+  color: var(--text-color-muted);
 }
 
 .button {
