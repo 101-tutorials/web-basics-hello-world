@@ -126,31 +126,31 @@ button:hover {
 
 @-webkit-keyframes hovering {
   0%   { margin-top: 0; }
-  50% { margin-top: -5px; }
+  50% { margin-top: -10px; }
   100% { margin-top: 0; }
 }
 
 @-moz-keyframes hovering {
   0%   { margin-top: 0; }
-  50% { margin-top: -5px; }
+  50% { margin-top: -10px; }
   100% { margin-top: 0; }
 }
 
 @-o-keyframes hovering {
   0%   { margin-top: 0; }
-  50% { margin-top: -5px; }
+  50% { margin-top: -10px; }
   100% { margin-top: 0; }
 }
 
 @keyframes hovering {
   0%   { margin-top: 0; }
-  50% { margin-top: -5px; }
+  50% { margin-top: -10px; }
   100% { margin-top: 0; }
 }
 
 .loading-animation {
-  -webkit-animation: hovering 1.3s infinite;
-  -moz-animation:    hovering 1.3s infinite;
-  -o-animation:      hovering 1.3s infinite;
-  animation:         hovering 1.3s infinite;
+  -webkit-animation: hovering 1.2s infinite;
+  -moz-animation:    hovering 1.2s infinite;
+  -o-animation:      hovering 1.2s infinite;
+  animation:         hovering 1.2s infinite;
 }
